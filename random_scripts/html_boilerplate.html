@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+
+  <script type="module">
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+  </script>
+
+  <!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+  <!-- <link rel="stylesheet" href="/assets/css/print.css" media="print"> -->
+
+  <meta name="description" content="Page description">
+  <meta property="og:title" content="Unique page title - My Site">
+  <meta property="og:description" content="Page description">
+  <meta property="og:image" content="https://www.mywebsite.com/image.jpg">
+  <meta property="og:image:alt" content="Image description">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://www.mywebsite.com/page">
+  <link rel="canonical" href="https://www.mywebsite.com/page">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/my.webmanifest">
+  <meta name="theme-color" content="#FF00FF">
+<style>
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+table caption { 
+	text-align: left 
+}
+
+.t-search th:nth-child(1) { width: 10%; }
+.t-search th:nth-child(2) { width: 40%; }
+.t-search th:nth-child(3) { width: 10%; }
+.t-search th:nth-child(4) { width: 35%; }
+
+/* header background on hover: */
+thead th:hover {
+	background: gray;
+}
+/* header text is in a */
+thead th a:hover {
+	color: black;
+}
+/* show hidden span on link hower in table head */
+thead th a .hidden { display: none; }
+thead th a:hover .normal { display: none; }
+thead th a:hover .hidden { display: inline; }
+
+tbody tr:nth-child(odd) {
+	background: #eee;
+}
+th, td {
+	border: 1px solid #999;
+	text-align: left;
+	overflow: hidden;
+	padding: 0px;
+}
+.center {
+	margin: auto;
+	width: 60%;
+	padding: 10px;
+	border: 1px solid gray;
+}
+col:target {
+	background: #eee;
+	color: red;
+}
+tbody tr:hover {
+	background: #dedede;
+}
+th a {
+	color: blue;
+	display: block;
+	text-decoration: none;
+}
+td a {
+	display: block;
+	text-decoration: none;
+	padding: 2px;
+}
+td nobr a {
+	display: inline-block;
+	padding: 0px;
+}
+td nobr a:hover {
+	color: red;
+}
+</style>
+</head>
+<body>
+
+<div class='center'>
+<table>
+  <caption>search</caption>
+    <colgroup>
+    <col id="table-title">
+    <col id="table-meta1">
+    <col id="table-meta2">
+    <col id="table-meta3">
+  </colgroup>
+  <thead class='t-search'>
+    <tr>
+        <th scope="col"><a href='test#table-title'><span class="normal">TITLE</span><span class="hidden">Sort Ascending</span><a></th>
+	<th scope="col"><a href='test#table-meta1'><span class="normal">METADATA1</span><span class="hidden">Sort Ascending</span></a></th>
+	<th scope="col"><a href='test#table-meta2'><span class="normal">METADATA2</span><span class="hidden">Sort Ascending</span></a></th>
+	<th scope="col"><a href='test#table-meta3'><span class="normal">METADATA3</span><span class="hidden">Sort Ascending</span></a></th>
+    </tr>
+  </thead>
+  <tbody>
+
+[% FOR var IN rows %]
+    <tr>
+      <th scope="row">TESTING</th>
+      <td><nobr><a href=''>/path1/</a><a href=''>path2</a></nobr></td>
+      <td>[% var.value %]</td>
+      <td><a href=''>[% var.name %]</a></td>
+    </tr>
+[% END %]
+  </tbody>
+</table>
+<div style='padding-top: 5px;margin: auto;text-align:center;'>test test</div>
+</div>
+<br>
+
+<!---------------------------------- -->
+<div class='center'>
+<table style='width: 50%;text-align: center; margin: auto;'>
+  <caption>overview</caption>
+    <colgroup>
+    <col id="table-title">
+    <col id="table-meta1">
+    <col id="table-meta2">
+  </colgroup>
+  <thead>
+    <tr>
+        <th scope="col"><a href='test#table-title'><span class="normal">Group</span><span class="hidden">Sort Ascending</span><a></th>
+	<th scope="col"><a href='test#table-meta1'><span class="normal">Count</span><span class="hidden">Sort Ascending</span></a></th>
+	<th scope="col"><a href='test#table-meta2'><span class="normal">Size</span><span class="hidden">Sort Ascending</span></a></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>Files</td>
+      <td>1337</td>
+      <td>5mb</td>
+    </tr>
+    <tr>
+      <td>Files</td>
+      <td>1337</td>
+      <td>5mb</td>
+    </tr>
+
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" colspan="2">Total size</th>
+      <td colspan="1">77gb</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+<!--------------------------------------------------- -->
+  <!-- Content
+  <script src="/assets/js/xy-polyfill.js" nomodule></script>
+  <script src="/assets/js/script.js" type="module"></script>
+  -->
+
+</body>
+</html>
