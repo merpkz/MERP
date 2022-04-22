@@ -3,7 +3,7 @@ set -eu -o pipefail
 
 # this uses mysql socket file authentication, so no additional parameters to mysql command.
 
-if [ $USER != "root" ]; then
+if [ ${EUID:-$(id -u)} -ne 0 ]; then
         echo "$0 should run as root user!"
         exit 1;
 fi
